@@ -149,3 +149,10 @@ body {
   }
 }
 
+html, body {
+  background-color: #3b4a2a !important; /* MATCHA GREEN */
+  background-image: none !important;
+}
+
+
+
