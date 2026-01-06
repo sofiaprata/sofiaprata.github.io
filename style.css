@@ -1,0 +1,158 @@
+:root {
+  --matcha: #70702F;
+  --rose: #C69A97;
+  --beige: #CCC6B9;
+  --offwhite: #FFF6FC;
+  --dark: #2a331c; /* verde escuro, não azul */
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+
+  /* MATCHA GREEN REAL */
+  background: linear-gradient(
+    180deg,
+    #2f3a1f 0%,   /* matcha escuro */
+    #3b4a2a 50%,  /* matcha médio */
+    #2a331c 100%  /* matcha profundo */
+  );
+
+  color: var(--offwhite);
+}
+
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.nav a {
+  color: var(--beige);
+  text-decoration: none;
+  position: relative;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--rose);
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  padding: 60px 8%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-content {
+  margin: auto 0;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.hero span {
+  color: var(--matcha);
+}
+
+.hero p {
+  margin-top: 16px;
+  max-width: 520px;
+  color: var(--beige);
+}
+
+/* BOTÃO */
+.btn {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 1px solid var(--matcha);
+  color: var(--matcha);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--matcha);
+  color: #0f120b;
+}
+
+/* SEÇÕES */
+.section {
+  padding: 80px 8%;
+}
+
+.section h2 {
+  margin-bottom: 24px;
+}
+
+/* PROJETOS */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: rgba(204, 198, 185, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 24px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* CONTATO */
+.contact {
+  text-align: center;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .nav ul {
+    display: none;
+  }
+
+  .hero {
+    padding: 40px 6%;
+  }
+}
+
+html, body {
+  background-color: #3b4a2a !important; /* MATCHA GREEN */
+  background-image: none !important;
+}
+
+
+
