@@ -1,9 +1,10 @@
 :root {
-  --matcha: #70702F;      /* verde matcha */
-  --rose: #C69A97;        /* rosa suave */
-  --beige: #CCC6B9;       /* bege */
-  --offwhite: #FFF6FC;    /* quase branco */
-  --dark: #0f0f14;
+  --matcha: #70702F;
+  --rose: #C69A97;
+  --beige: #CCC6B9;
+  --offwhite: #FFF6FC;
+  --dark: #2a331c; /* verde escuro, não azul */
+
 }
 
 * {
@@ -14,13 +15,18 @@
 
 body {
   font-family: 'Inter', sans-serif;
+
+  /* MATCHA GREEN REAL */
   background: linear-gradient(
     180deg,
-    #1a1f12,
-    #0f120b
+    #2f3a1f 0%,   /* matcha escuro */
+    #3b4a2a 50%,  /* matcha médio */
+    #2a331c 100%  /* matcha profundo */
   );
+
   color: var(--offwhite);
 }
+
 
 /* NAV */
 .nav {
@@ -142,3 +148,4 @@ body {
     padding: 40px 6%;
   }
 }
+
