@@ -1,0 +1,103 @@
+:root {
+  --matcha-dark: #3b4a2a;
+  --matcha-olive: #70702f;
+  --matcha-soft: #c6a9a7;
+  --off-white: #fff6fc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, var(--matcha-olive), var(--matcha-dark));
+  color: var(--off-white);
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.navbar a {
+  color: var(--off-white);
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.hero {
+  padding: 120px 40px;
+  max-width: 800px;
+}
+
+.hero h1 span {
+  color: var(--matcha-soft);
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 30px;
+  background: var(--matcha-soft);
+  color: #000;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 1px solid var(--matcha-soft);
+  color: var(--off-white);
+}
+
+.page {
+  padding: 100px 40px;
+}
+
+.skills-grid,
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.skill-card,
+.project-card {
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  text-decoration: none;
+  color: var(--off-white);
+}
+
+.background-blob {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: var(--matcha-soft);
+  filter: blur(140px);
+  opacity: 0.3;
+  top: 10%;
+  left: 10%;
+  z-index: -1;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.6;
+}

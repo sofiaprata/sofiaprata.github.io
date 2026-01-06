@@ -3,67 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sofia | Portfólio</title>
+  <title>Sofia Prata | Portfólio</title>
 
-  <!-- Fonte -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <nav class="nav">
-      <span class="logo">Sofia</span>
-      <ul>
-        <li><a href="#about">Sobre</a></li>
-        <li><a href="#projects">Projetos</a></li>
-        <li><a href="#contact">Contato</a></li>
-      </ul>
-    </nav>
+  <div class="background-blob"></div>
 
-    <div class="hero-content">
-      <h1>Hello,<br>Eu sou <span>Sofia</span></h1>
-      <p>Ciência da Computação • Dados • IA • Desenvolvimento de Software</p>
-      <a href="#contact" class="btn">Vamos conversar</a>
-    </div>
+  <header class="navbar">
+    <h2 class="logo">Sofia</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="skills.html">Habilidades</a>
+      <a href="projects.html">Projetos</a>
+    </nav>
   </header>
 
-  <!-- SOBRE -->
-  <section id="about" class="section">
-    <h2>Sobre mim</h2>
+  <main class="hero">
+    <h1>Olá, eu sou <span>Sofia</span></h1>
     <p>
-      Graduanda em Ciência da Computação (5º semestre), com experiência em
-      Análise de Dados, Business Intelligence, Inteligência Artificial e
-      Desenvolvimento de Software.
+      Graduanda em Ciência da Computação, com experiência em
+      análise de dados, inteligência artificial e desenvolvimento de software.
     </p>
-  </section>
 
-  <!-- PROJETOS -->
-  <section id="projects" class="section">
-    <h2>Projetos</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>Análise de Dados em Saúde</h3>
-        <p>Pipeline em Python para tratamento e geração de insights.</p>
-      </div>
-      <div class="card">
-        <h3>Dashboard BI</h3>
-        <p>Visualização de dados com foco em tomada de decisão.</p>
-      </div>
+    <div class="buttons">
+      <a href="projects.html" class="btn">Ver Projetos</a>
+      <a href="skills.html" class="btn outline">Habilidades</a>
     </div>
-  </section>
+  </main>
 
-  <!-- CONTATO -->
-  <section id="contact" class="section contact">
-    <h2>Contato</h2>
-    <p>Vamos conversar sobre projetos, dados ou tecnologia.</p>
-    <a href="mailto:seuemail@email.com" class="btn">Entrar em contato</a>
-  </section>
+  <footer>
+    <p>© 2026 · Sofia Prata</p>
+  </footer>
 
 </body>
 </html>
