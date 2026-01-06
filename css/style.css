@@ -21,29 +21,60 @@ body {
 ========================= */
 .hero {
   min-height: 100vh;
-  display: flex;
   position: relative;
   background-image: url("../assets/fundo1.jpg");
   background-size: cover;
   background-position: center;
+  display: flex;
 }
 
 /* =========================
-   FLORES EMPILHADAS
+   PAINÉIS SUPERIORES
 ========================= */
-.flowers-stack {
+.hero-panels {
   position: absolute;
   top: 24px;
-  left: 24px;
+  right: 40px;
   display: flex;
-  flex-direction: column;
+  gap: 14px;
   z-index: 5;
 }
 
+.panel {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 10px 20px;
+  border-radius: 22px;
+  text-decoration: none;
+  color: #7a8f6a;
+  font-size: 0.9rem;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   FLORES (DIREITA)
+========================= */
+.flowers-stack {
+  position: absolute;
+  top: 120px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  z-index: 4;
+  pointer-events: none;
+}
+
 .flowers-stack img {
-  width: 110px;
-  margin-top: -38px;
-  animation: float 6s ease-in-out infinite;
+  width: 80px;                /* menores */
+  margin-top: -26px;          /* mais unidas */
+  animation: floatSoft 7s ease-in-out infinite;
   filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25));
 }
 
@@ -53,33 +84,11 @@ body {
 .flowers-stack img:nth-child(4) { animation-delay: 3s; }
 .flowers-stack img:nth-child(5) { animation-delay: 4s; }
 
-/* =========================
-   PAINÉIS TOPO
-========================= */
-.hero-panels {
-  position: absolute;
-  top: 28px;
-  right: 40px;
-  display: flex;
-  gap: 16px;
-  z-index: 5;
-}
-
-.panel {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 10px 22px;
-  border-radius: 20px;
-  text-decoration: none;
-  color: #7a8f6a;
-  font-size: 0.95rem;
-  font-weight: 500;
-  backdrop-filter: blur(6px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.panel:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+/* ANIMAÇÃO LEVE */
+@keyframes floatSoft {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
 }
 
 /* =========================
@@ -121,28 +130,12 @@ body {
   border-radius: 30px;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* =========================
-   COLUNA DIREITA
-========================= */
-.hero-image {
-  width: 45%;
-}
-
-/* =========================
-   ANIMAÇÃO
-========================= */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
 }
 
 /* =========================
@@ -158,16 +151,17 @@ body {
     padding: 50px 30px;
   }
 
-  .hero-image {
-    display: none;
+  .flowers-stack {
+    right: 20px;
+    top: 90px;
+  }
+
+  .flowers-stack img {
+    width: 65px;
+    margin-top: -22px;
   }
 
   .hero-panels {
     right: 20px;
-  }
-
-  .flowers-stack img {
-    width: 90px;
-    margin-top: -30px;
   }
 }
