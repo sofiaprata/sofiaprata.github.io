@@ -12,28 +12,86 @@
 ========================= */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fdecec;
   color: #7a8f6a;
   overflow-x: hidden;
 }
 
 /* =========================
-   HERO (HOME)
+   HERO
 ========================= */
 .hero {
-  display: flex;
   min-height: 100vh;
-  position: relative; /* contexto para absolute */
+  display: flex;
+  position: relative;
+  background-image: url("../assets/fundo1.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-/* CONTEÚDO ESQUERDO */
+/* =========================
+   FLORES EMPILHADAS
+========================= */
+.flowers-stack {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+}
+
+.flowers-stack img {
+  width: 110px;
+  margin-top: -38px;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25));
+}
+
+.flowers-stack img:nth-child(1) { margin-top: 0; }
+.flowers-stack img:nth-child(2) { animation-delay: 1s; }
+.flowers-stack img:nth-child(3) { animation-delay: 2s; }
+.flowers-stack img:nth-child(4) { animation-delay: 3s; }
+.flowers-stack img:nth-child(5) { animation-delay: 4s; }
+
+/* =========================
+   PAINÉIS TOPO
+========================= */
+.hero-panels {
+  position: absolute;
+  top: 28px;
+  right: 40px;
+  display: flex;
+  gap: 16px;
+  z-index: 5;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 22px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #7a8f6a;
+  font-size: 0.95rem;
+  font-weight: 500;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
 .hero-content {
   width: 55%;
   padding: 90px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 2;
+  z-index: 3;
 }
 
 .hero-content h1 {
@@ -68,152 +126,23 @@ body {
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* IMAGEM DIREITA */
+/* =========================
+   COLUNA DIREITA
+========================= */
 .hero-image {
   width: 45%;
-  background-image: url("../assets/fundo1.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  z-index: 0;
 }
 
 /* =========================
-   FLORES DECORATIVAS
+   ANIMAÇÃO
 ========================= */
-.flower {
-  position: absolute;
-  z-index: 3; /* garante que fica acima de tudo */
-  animation: float 6s ease-in-out infinite;
-  pointer-events: none;
-  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
-}
-
-.flower-top {
-  top: 40px;
-  left: 20px;
-  width: 120px;
-}
-
-.flower-bottom {
-  bottom: 30px;
-  right: 35%;
-  width: 160px;
-  animation-delay: 2s;
-}
-
-/* ANIMAÇÃO SUAVE */
 @keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-/* =========================
-   NAVBAR (PÁGINAS INTERNAS)
-========================= */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 28px 80px;
-  background-color: #fdecec;
-}
-
-.logo {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: #7a8f6a;
-}
-
-.navbar nav a {
-  margin-left: 30px;
-  text-decoration: none;
-  color: #8fa48a;
-  font-weight: 500;
-  position: relative;
-}
-
-.navbar nav a.active::after,
-.navbar nav a:hover::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 2px;
-  background-color: #b6cf9c;
-}
-
-/* =========================
-   PÁGINAS INTERNAS
-========================= */
-.page {
-  padding: 80px;
-}
-
-.page h1 {
-  font-size: 2.6rem;
-  font-weight: 300;
-  margin-bottom: 50px;
-  color: #7a8f6a;
-}
-
-/* =========================
-   PROJETOS
-========================= */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-}
-
-.project-card {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 30px;
-  border-radius: 24px;
-  text-decoration: none;
-  color: #7a8f6a;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
-
-.project-card h3 {
-  margin-bottom: 12px;
-  font-weight: 500;
-}
-
-/* =========================
-   SKILLS
-========================= */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-}
-
-.skill-card {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 28px;
-  border-radius: 24px;
-}
-
-.skill-card h3 {
-  margin-bottom: 10px;
-  font-weight: 500;
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
 }
 
 /* =========================
@@ -230,19 +159,15 @@ body {
   }
 
   .hero-image {
-    width: 100%;
-    height: 40vh;
+    display: none;
   }
 
-  .flower-bottom {
-    right: 10px;
+  .hero-panels {
+    right: 20px;
   }
 
-  .navbar {
-    padding: 20px 30px;
-  }
-
-  .page {
-    padding: 50px 30px;
+  .flowers-stack img {
+    width: 90px;
+    margin-top: -30px;
   }
 }
