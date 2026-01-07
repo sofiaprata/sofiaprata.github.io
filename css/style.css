@@ -98,7 +98,7 @@ body {
 /* IMAGEM / TEXTURA mas é so o estilo tem que por a imagem la */
 .hero-image {
   background-color: var(--verde-suave);
-  background-image: url("sua-textura-ou-imagem.jpg");
+  background-image: url("fundo1.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
