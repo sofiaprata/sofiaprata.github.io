@@ -1,60 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Sofia Prata | Portfólio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>Sofia Prata | Portfolio</title>
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="hero">
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#sobre">Sobre</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contatos</a>
+  </nav>
 
-    <!-- COLUNA ESQUERDA -->
-    <section class="hero-left">
+  <!-- HERO -->
+  <section class="hero">
 
-      <!-- FLOR PENDURADA -->
-      <img src="assets/flor1.png" class="flower-hanging" alt="flor decorativa">
+    <!-- TEXTO -->
+    <div class="hero-text">
+      <h1>Hello World,</h1>
 
-      <div class="hero-text">
-        <h1>
-          Hello World,<br>
-          Eu sou <span>Sofia Prata</span>,<br>
-          Desenvolvedora Fullstack
-        </h1>
+      <h2>
+        Eu sou <span>Sofia Prata</span>,<br />
+        Desenvolvedora Fullstack
+      </h2>
 
-        <p>
-          Graduanda em Ciência da Computação, com foco em web<br>
-          development and design
-        </p>
+      <p>
+        Graduanda em Ciência da Computação, com foco em web
+        development and design
+      </p>
 
-        <a href="#contato" class="btn">
-          Entre em contato comigo!
-        </a>
-      </div>
-    </section>
+      <button id="btnContato">
+        Entre em contato comigo!
+      </button>
+    </div>
 
-    <!-- COLUNA DIREITA -->
-    <section class="hero-right">
+    <!-- IMAGEM -->
+    <div class="hero-image"></div>
 
-      <!-- MENU -->
-      <nav class="hero-menu">
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contatos">Contatos</a>
-      </nav>
+  </section>
 
-      <!-- FLORES -->
-      <div class="flowers-stack">
-        <img src="assets/flor2.png">
-        <img src="assets/flor3.png">
-        <img src="assets/flor5.png">
-        <img src="assets/flor6.png">
-      </div>
-
-    </section>
-
-  </header>
-
+  <script src="script.js"></script>
 </body>
 </html>
