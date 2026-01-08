@@ -165,3 +165,26 @@ body {
 
   box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
+
+/* CONTATO */
+.contatos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.contatos a {
+  text-decoration: none;
+  color: var(--texto-destaque);
+  background-color: #fff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contatos a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
