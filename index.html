@@ -2,9 +2,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio</title>
+  <title>Sofia Prata | Portfolio</title>
 
-  <!-- FONTE -->
+  <!-- Fonte -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,22 +14,55 @@
 </head>
 <body>
 
+  <!-- NAV -->
   <nav class="nav">
-    <a>Sobre</a>
-    <a>Projetos</a>
-    <a>Contatos</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="produtos.html">Produtos</a>
+    <a href="#" id="btnNavContato">Contato</a>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
+
     <div class="hero-text">
       <h1>Hello World,</h1>
-      <h2>Eu sou <span>Sofia Prata</span>,<br>Desenvolvedora Fullstack</h2>
-      <p>Graduanda em Ciência da Computação...</p>
-      <button>Entre em contato comigo!</button>
+
+      <h2>
+        Eu sou <span>Sofia Prata</span>,<br>
+        Desenvolvedora Fullstack
+      </h2>
+
+      <p>
+        Graduanda em Ciência da Computação, com foco em desenvolvimento web
+        e design de interfaces.
+      </p>
+
+      <button id="btnContato">Entre em contato comigo!</button>
     </div>
 
-    <div class="hero-image"></div>
+    <div class="hero-image">
+      <div class="flowers">
+        <img src="flor1.png" class="flower f1">
+        <img src="flor2.png" class="flower f2">
+        <img src="flor3.png" class="flower f3">
+      </div>
+    </div>
+
   </section>
 
+  <!-- MODAL CONTATO -->
+  <div class="modal-overlay" id="modalContato">
+    <div class="modal">
+      <button class="close-modal" id="closeModal">×</button>
+
+      <h3>Entre em contato</h3>
+      <p>Email: <span>seuemail@email.com</span></p>
+      <p>LinkedIn: <span>linkedin.com/in/seuperfil</span></p>
+      <p>GitHub: <span>github.com/seuperfil</span></p>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,11 +1,21 @@
 const btnContato = document.getElementById("btnContato");
+const btnNavContato = document.getElementById("btnNavContato");
+const modal = document.getElementById("modalContato");
+const closeModal = document.getElementById("closeModal");
 
-btnContato.addEventListener("click", () => {
-  const contato = document.getElementById("contato");
+function openModal() {
+  modal.style.display = "flex";
+}
 
-  if (contato) {
-    contato.scrollIntoView({ behavior: "smooth" });
-  } else {
-    alert("Seção de contato em breve 💌");
+btnContato.addEventListener("click", openModal);
+btnNavContato.addEventListener("click", openModal);
+
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
   }
 });
