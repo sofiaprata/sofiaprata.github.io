@@ -156,15 +156,23 @@ body {
 }
 
 .modal {
-  background: white;
-  padding: 32px 36px;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
   border-radius: 20px;
   width: 320px;
-  text-align: center;
   position: relative;
-
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
+
 
 /* CONTATO */
 .contatos {
