@@ -140,61 +140,28 @@ body {
 
 /* MODAL */
 .modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  position: fixed;          /* <- ESSENCIAL */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.35);
   display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
+
+  align-items: center;      /* <- CENTRALIZA */
+  justify-content: center;  /* <- CENTRALIZA */
+
+  z-index: 9999;            /* <- NA FRENTE DE TUDO */
 }
 
 .modal {
   background: white;
   padding: 32px 36px;
   border-radius: 20px;
-  min-width: 320px;
+  width: 320px;
   text-align: center;
   position: relative;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
 
-.modal h3 {
-  margin-bottom: 18px;
-  font-weight: 500;
-}
-
-.modal p {
-  margin: 8px 0;
-  font-size: 0.9rem;
-}
-
-.modal span {
-  font-weight: 500;
-  color: var(--texto-destaque);
-}
-
-.close-modal {
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  border: none;
-  background: none;
-  font-size: 1.4rem;
-  cursor: pointer;
-}
-
-/* RESPONSIVO */
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-text {
-    padding: 60px 40px;
-  }
-
-  .nav {
-    right: 20px;
-  }
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
