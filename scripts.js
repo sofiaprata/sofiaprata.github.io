@@ -153,22 +153,27 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
-    // ===== Skills Progress Animation =====
+    // ===== Skills Progress Animation (CORRIGIDO) =====
     const skillsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const progressBars = entry.target.querySelectorAll('.skill-progress');
                 progressBars.forEach(bar => {
-                    const width = bar.style.width;
-                    bar.style.width = '0';
-                    setTimeout(() => {
-                        bar.style.width = width;
-                    }, 100);
+                    // Pega o valor de data-width
+                    const targetWidth = bar.getAttribute('data-width');
+                    if (targetWidth) {
+                        // ComeÃ§a com 0
+                        bar.style.width = '0%';
+                        // Anima atÃ© o valor alvo
+                        setTimeout(() => {
+                            bar.style.width = targetWidth;
+                        }, 100);
+                    }
                 });
                 skillsObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.2 });
 
     const skillsSection = document.querySelector('.skills');
     if (skillsSection) {
@@ -188,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const message = document.getElementById('message').value;
 
             // Show success message
-            showNotification('Mensagem enviada com sucesso! 💌', 'success');
+            showNotification('Mensagem enviada com sucesso! ðŸ’Œ', 'success');
 
             // Reset form
             contactForm.reset();
@@ -298,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
             clickCount++;
 
             if (clickCount >= 5) {
-                showNotification('Você encontrou o easter egg! 🎉✨', 'success');
+                showNotification('VocÃª encontrou o easter egg! ðŸŽ‰âœ¨', 'success');
                 document.body.style.animation = 'rainbow 3s ease infinite';
 
                 setTimeout(() => {
@@ -310,9 +315,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ===== Console Message =====
-    console.log('%c🌸 Portfolio Fofo 🌸', 'color: #F5AFAF; font-size: 24px; font-weight: bold;');
-    console.log('%cFeito com 💕 e muito ☕', 'color: #C8AAAA; font-size: 14px;');
-    console.log('%cDica: Clique no logo 5 vezes! 😉', 'color: #C5D89D; font-size: 12px;');
+    console.log('%cðŸŒ¸ Portfolio Sofia Prata ðŸŒ¸', 'color: #F5AFAF; font-size: 24px; font-weight: bold;');
+    console.log('%cFeito com ðŸ’• e muito â˜•', 'color: #C8AAAA; font-size: 14px;');
+    console.log('%cDica: Clique no logo 5 vezes! ðŸ˜‰', 'color: #C5D89D; font-size: 12px;');
 });
 
 // ===== Add CSS Animations =====
